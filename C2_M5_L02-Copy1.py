@@ -17,9 +17,8 @@
 # 5. **Presenting Findings in a Comprehensive Report**
 
 # ## Lab Instructions
-# ### 1. Load and Explore the Data (5 minutes)
+# ### 1. Load and Explore the Data 
 # #### Step 1.1: Import the required Python library and load dataset.
-# Code is provided.
 
 # In[1]:
 
@@ -32,7 +31,7 @@ df.head()
 
 
 # #### Step 1.2: Examine Column Names and Data Types
-# Inspect the column names and data types using `df.info()`. (code provided)
+# Inspect the column names and data types using `df.info()`. 
 
 # In[2]:
 
@@ -42,7 +41,7 @@ df.info()
 
 
 # #### Step 1.3: Get Summary Statistics
-# Get summary statistics of numerical columns using `df.describe()`. (code provided)
+# Get summary statistics of numerical columns using `df.describe()`. 
 
 # In[3]:
 
@@ -60,7 +59,7 @@ df.describe()
 # Drop the "Unnamed: 0" column
 df = df.drop('Unnamed: 0', axis = 1)
 
-# Use df.describe() to confirm the column was removed (code provided)
+# Use df.describe() to confirm the column was removed 
 df.describe()
 
 # Expected shape of DataFrame is (3333,11) after dropping column. 
@@ -91,7 +90,7 @@ features = df.drop(columns=['Churn'])
 target_variable = y
 
 
-# One-hot encoding for 'ContractRenewal' feature (provided; do not change)
+# One-hot encoding for 'ContractRenewal' feature 
 features = pd.get_dummies(features,columns=['ContractRenewal'],dtype=int)
 # See results with one-hot encoding (Notice last 2 columns)
 features.head()
@@ -110,7 +109,7 @@ print(f"target_variable shape: {target_variable.shape}. Expected is (3333,)")
 # Checking DataFrame (features and target_variable) shapes
 
 
-# ### 2. Data Cleaning and Preprocessing (5 minutes)
+# ### 2. Data Cleaning and Preprocessing
 # #### Step 2.1: Split the Data
 # Split the data into training and testing sets (70% train, 30% test) using `train_test_split` from Scikit-Learn. 
 # 
@@ -141,7 +140,7 @@ print(y_test.shape) # Expected (1000,)
 # Checking DataFrame (features and target_variable) shapes
 
 
-# ### 3. Exploratory Data Analysis (EDA) and Visualization (20 minutes)
+# ### 3. Exploratory Data Analysis (EDA) and Visualization 
 # #### Step 3.1: Summary Statistics for Relevant Features
 # Calculate and print summary statistics for relevant features (average tenure for churned vs. non-churned customers).
 
@@ -205,7 +204,7 @@ df.boxplot(column='MonthlyCharge', by='Churn')
 plt.title('Monthly Charges vs. Churn')
 plt.xlabel('Churn')
 plt.ylabel('Monthly Charge')
-plt.suptitle('')  # Remove the default suptitle
+plt.suptitle('')  
 plt.show()
 
 
@@ -218,9 +217,9 @@ plt.show()
 # - Observation 2: Both churn and non-churned customers are concentrated between 50-150 axcount weeks. The churned group(blue) appears relatively small and flat across all tenure ranges. Tenure alone doesn't strongly seperate churned from non-churned.
 # - Observation 3: Churned customers have a noticeably higher median monthly charge, the churned group also has a tighter IQR suggesting they cluster around price points. Higher monthly charges are associated with higher churn risk.
 
-# ### 4. Machine Learning Model Building and Evaluation (20 minutes)
+# ### 4. Machine Learning Model Building and Evaluation 
 # #### Step 4.1: Choose a Classification Algorithm and Train the Model
-# Import a suitable classification algorithm (`LogisticRegression` in this case) and create an instance of it (provided). 
+# Import a suitable classification algorithm (`LogisticRegression` in this case) and create an instance of it. 
 # 
 # Setting `max_iter = 1000` in our Logistic Regression model means we're giving it a limit of 1000 attempts to learn the optimal patterns in the data, which is often a good initial value to allow for convergence without excessive training time, though the ideal number can vary depending on the specific dataset.
 
@@ -229,7 +228,7 @@ plt.show()
 
 from sklearn.linear_model import LogisticRegression
 
-# Create an instance of the Logistic Regression model (provided)
+# Create an instance of the Logistic Regression model 
 model = LogisticRegression(max_iter = 1000)
 
 # Train the model
