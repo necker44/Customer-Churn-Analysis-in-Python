@@ -122,7 +122,7 @@ import matplotlib.pyplot as plt
 plt.hist(churned['AccountWeeks'], alpha=0.5, label='Churned')
 plt.hist(non_churned['AccountWeeks'], alpha=0.5, label='Non-Churned')
 
-# Chart options provided
+# Chart
 plt.title('Tenure Distribution by Churn Status')
 plt.xlabel('Account Weeks')
 plt.ylabel('Frequency')
@@ -136,11 +136,11 @@ import matplotlib.pyplot as plt
 # Box plot for monthly charges
 df.boxplot(column='MonthlyCharge', by='Churn')
 
-# Chart options provided
+# Chart 
 plt.title('Monthly Charges vs. Churn')
 plt.xlabel('Churn')
 plt.ylabel('Monthly Charge')
-plt.suptitle('')  # Remove the default suptitle
+plt.suptitle('') 
 plt.show()
 
 <img width="759" height="567" alt="image" src="https://github.com/user-attachments/assets/ecb815e6-b0af-4ed3-bb74-84f4632cbea9" />
@@ -158,7 +158,7 @@ Setting max_iter = 1000 in our Logistic Regression model means we're giving it a
 
 from sklearn.linear_model import LogisticRegression
 
-# Create an instance of the Logistic Regression model (provided)
+# Create an instance of the Logistic Regression model 
 model = LogisticRegression(max_iter = 1000)
 
 # Train the model
